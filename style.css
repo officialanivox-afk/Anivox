@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: #ffffff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #000;
+}
+
+header h1 {
+  color: #ff3b3b;
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 15px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  font-size: 28px;
+}
+
+.hero p {
+  color: #ccc;
+}
+
+button {
+  background: #ff3b3b;
+  border: none;
+  padding: 12px 20px;
+  color: #fff;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+.section {
+  padding: 20px;
+}
+
+.section h3 {
+  margin-bottom: 10px;
+}
+
+.cards {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.card {
+  min-width: 160px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card p {
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* REELS */
+.reels {
+  background: #000;
+}
+
+.reel-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.reel {
+  min-width: 120px;
+  height: 200px;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+}
+.reel-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: none;
+  z-index: 1000;
+}
+
+.reel-screen video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reel-screen button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: red;
+  border: none;
+  color: #fff;
+  padding: 8px;
+  border-radius: 50%;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: none;
+}

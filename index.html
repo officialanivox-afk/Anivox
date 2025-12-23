@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ANIVOX — Watch • Reel • Connect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>ANIVOX</h1>
+  <nav>
+    <a href="#">Anime</a>
+    <a href="#">Movies</a>
+    <a href="#">Series</a>
+    <a href="#">Reels</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Watch • Reel • Connect</h2>
+  <p>Anime, Movies & Series — All in One Place</p>
+  <button>Explore Now</button>
+</section>
+
+<!-- ANIME -->
+<section class="section">
+  <h3>🔥 Popular Anime</h3>
+  <div class="cards">
+    <div class="card">
+      <video src="https://www.w3schools.com/html/movie.mp4" controls></video>
+      <p>Naruto Episode 1</p>
+    </div>
+    <div class="card">
+      <video src="https://www.w3schools.com/html/movie.mp4" controls></video>
+      <p>One Piece Episode 1</p>
+    </div>
+  </div>
+</section>
+
+<!-- MOVIES -->
+<section class="section">
+  <h3>🎬 Movies</h3>
+  <div class="cards">
+    <div class="card">
+      <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
+      <p>Movie 1</p>
+    </div>
+    <div class="card">
+      <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
+      <p>Movie 2</p>
+    </div>
+  </div>
+</section>
+
+<!-- REELS -->
+<section class="section reels">
+  <h3>📱 ANIVOX Reels</h3>
+  <div class="reel-container">
+    <div class="reel" onclick="openReel()">Reel 1</div>
+    <div class="reel" onclick="openReel()">Reel 2</div>
+  </div>
+</section>
+
+<!-- FULLSCREEN REEL -->
+<div class="reel-screen" id="reelScreen">
+  <video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay loop controls></video>
+  <button onclick="closeReel()">✖</button>
+</div>
+
+<!-- LOGIN -->
+<section class="section">
+  <h3>👤 Login / Sign Up</h3>
+  <input type="text" placeholder="Username">
+  <input type="email" placeholder="Email">
+  <input type="password" placeholder="Password">
+  <button>Create Account</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
