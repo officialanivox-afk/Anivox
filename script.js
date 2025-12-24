@@ -1,15 +1,57 @@
-const realmName = document.getElementById('realmName');
-const traceBtn = document.getElementById('traceBtn');
+const realms = [
+  {
+    name: "Realm • Drift",
+    bg1: "#00ffd5",
+    bg2: "#5b7cff",
+    accent: "#5b7cff"
+  },
+  {
+    name: "Realm • Echo",
+    bg1: "#ff7ad9",
+    bg2: "#7a5cff",
+    accent: "#ff7ad9"
+  },
+  {
+    name: "Realm • Neon",
+    bg1: "#7bff00",
+    bg2: "#00ffd5",
+    accent: "#7bff00"
+  },
+  {
+    name: "Realm • Void",
+    bg1: "#000000",
+    bg2: "#1a1a1a",
+    accent: "#888888"
+  }
+];
 
-const creator = document.getElementById('creator');
-const whisperInput = document.getElementById('whisperInput');
-const distort = document.getElementById('distort');
-const save = document.getElementById('save');
-const cancel = document.getElementById('cancel');
-const baseVideo = document.getElementById('baseVideo');
-
-const realms = ["Realm • Drift", "Realm • Echo", "Realm • Neon", "Realm • Void"];
 let realm = 0;
+
+function applyRealm(index) {
+  const r = realms[index];
+  realmName.textContent = r.name;
+
+  document.documentElement.style.setProperty("--bg1", r.bg1);
+  document.documentElement.style.setProperty("--bg2", r.bg2);
+  document.documentElement.style.setProperty("--accent", r.accent);
+}
+
+/* INITIAL */
+applyRealm(0);
+
+/* REALM SWIPE */
+let startX = 0;
+document.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+}, { passive: true });
+
+document.addEventListener("touchend", e => {
+  const diff = e.changedTouches[0].clientX - startX;
+  if (Math.abs(diff) > 60) {
+    realm = (realm + (diff > 0 ? 1 : -1) + realms.length) % realms.length;
+    applyRealm(realm);
+  }
+}, { passive: true });
 
 /* REALM SWIPE */
 let startX = 0;
