@@ -8,12 +8,11 @@ const save = document.getElementById('save');
 const cancel = document.getElementById('cancel');
 const baseVideo = document.getElementById('baseVideo');
 
-let realm = 0;
 const realms = ["Realm • Drift", "Realm • Echo", "Realm • Neon", "Realm • Void"];
+let realm = 0;
 
-/* REALM SWIPE (LEFT-RIGHT ONLY) */
+/* REALM SWIPE */
 let startX = 0;
-
 document.addEventListener('touchstart', e => {
   startX = e.touches[0].clientX;
 }, { passive: true });
@@ -26,25 +25,24 @@ document.addEventListener('touchend', e => {
   }
 }, { passive: true });
 
-/* CREATOR */
 traceBtn.onclick = () => creator.classList.add('show');
 cancel.onclick = () => creator.classList.remove('show');
 
 distort.oninput = () => {
   const v = distort.value;
-  baseVideo.style.filter =
-    `hue-rotate(${v}deg) saturate(${100 + v}%) blur(${v / 40}px)`;
+  baseVideo.style.filter = `hue-rotate(${v}deg) blur(${v/40}px)`;
 };
 
 save.onclick = () => {
   const text = whisperInput.value.trim();
-  if (text) {
-    const s = document.createElement('section');
-    s.className = 'scene';
-    s.innerHTML = `<p class="whisper">${text}</p>`;
-    document.getElementById('flow').appendChild(s);
-  }
-  creator.classList.remove('show');
+  if (!text) return;
+
+  const s = document.createElement('section');
+  s.className = 'scene';
+  s.innerHTML = `<p class="whisper">${text}</p>`;
+  document.getElementById('flow').appendChild(s);
+
   whisperInput.value = '';
   distort.value = 0;
+  creator.classList.remove('show');
 };
