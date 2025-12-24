@@ -1,3 +1,42 @@
+let audio = new Audio();
+audio.loop = true;
+audio.volume = 0;
+
+let soundEnabled = false;
+
+function playRealmSound(index) {
+  if (!soundEnabled) return;
+
+  const newSrc = realmSounds[index];
+  if (audio.src !== newSrc) {
+    fadeOutIn(newSrc);
+  }
+}
+
+function fadeOutIn(src) {
+  const fadeOut = setInterval(() => {
+    if (audio.volume > 0.05) {
+      audio.volume -= 0.05;
+    } else {
+      clearInterval(fadeOut);
+      audio.pause();
+      audio.src = src;
+      audio.load();
+      audio.play();
+      fadeIn();
+    }
+  }, 40);
+}
+
+function fadeIn() {
+  const fadeIn = setInterval(() => {
+    if (audio.volume < 0.4) {
+      audio.volume += 0.04;
+    } else {
+      clearInterval(fadeIn);
+    }
+  }, 60);
+}
 const realms = [
   { name:"Realm • Drift", bg1:"#00ffd5", bg2:"#5b7cff", accent:"#5b7cff" },
   { name:"Realm • Echo",  bg1:"#ff7ad9", bg2:"#7a5cff", accent:"#ff7ad9" },
