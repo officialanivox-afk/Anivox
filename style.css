@@ -106,3 +106,76 @@ body {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
 }
+/* 🌌 WORLD BREATHING EFFECT */
+.world {
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+
+/* 🌊 FLOW INERTIA */
+.flow {
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ✨ SOFT FLOAT FOR SCENES */
+.scene {
+  animation: drift 9s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-14px); }
+}
+
+/* 🌠 CINEMATIC VIGNETTE */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at center,
+      rgba(0,0,0,0) 40%,
+      rgba(0,0,0,0.55) 100%);
+  z-index: 20;
+}
+
+/* 🌙 SUBTLE GRAIN (CINEMA FEEL) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.015),
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 21;
+}
+
+/* 🧠 TIME DISSOLVE FEEL */
+.whisper {
+  animation: fadeFloat 7s ease-in-out infinite;
+}
+
+@keyframes fadeFloat {
+  0% { opacity: 0.4; transform: translateY(8px); }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; transform: translateY(-8px); }
+}
+
+/* 🌀 CREATOR CARD PULSE */
+.creator-card {
+  animation: pulse 6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 rgba(91,124,255,0.0); }
+  50% { box-shadow: 0 0 40px rgba(91,124,255,0.25); }
+  100% { box-shadow: 0 0 0 rgba(91,124,255,0.0); }
+  }
