@@ -8,19 +8,21 @@
 
 <body>
 
-<div class="world" id="world">
+<div class="world entered" id="world">
 
+  <!-- BACKGROUND LAYERS -->
   <div class="layer bg"></div>
   <div class="layer mid"></div>
   <div class="layer fg"></div>
 
+  <!-- HUD -->
   <div class="hud">
     <span id="realmName">Realm • Drift</span>
     <button class="trace-btn" id="traceBtn">Leave a trace</button>
   </div>
 
+  <!-- FLOW -->
   <div class="flow" id="flow">
-
     <section class="scene">
       <p class="whisper">Nothing here is permanent.</p>
     </section>
@@ -32,13 +34,20 @@
       <p class="caption">Touch to bend this moment.</p>
     </section>
 
+    <section class="scene">
+      <p class="whisper">What you add, stays.</p>
+    </section>
   </div>
 
+  <!-- CREATOR -->
   <div class="creator" id="creator">
     <div class="creator-card">
       <p class="creator-title">Leave a trace</p>
 
+      <label class="lbl">Write a whisper</label>
       <textarea id="whisperInput" placeholder="Few words are enough…"></textarea>
+
+      <label class="lbl">Distort the moment</label>
       <input type="range" id="distort" min="0" max="100" value="0"/>
 
       <div class="creator-actions">
@@ -51,6 +60,5 @@
 </div>
 
 <script src="script.js"></script>
-<script src="role.js"></script>
 </body>
 </html>
