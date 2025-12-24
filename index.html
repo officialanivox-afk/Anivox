@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anivox</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="world">
-    <p class="line">You’re safe here.</p>
-    <button class="enter">Enter when ready</button>
+    <div class="gradient"></div>
+
+    <div class="center">
+      <p class="safe-text">You’re safe here.</p>
+      <button class="enter-btn" onclick="enterWorld()">Enter when ready</button>
+    </div>
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
