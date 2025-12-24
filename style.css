@@ -180,10 +180,18 @@ body::before {
   100% { box-shadow: 0 0 0 rgba(91,124,255,0.0); }
   }
 .flow {
-  overflow-y: auto;
+  height: 100vh;
+  overflow-y: scroll;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
+
+.scene {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+           }
 .scene.video video {
   width: 90%;
   max-width: 700px;
