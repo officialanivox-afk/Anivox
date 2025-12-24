@@ -98,3 +98,11 @@ button {
   color: #fff;
   font-size: 16px;
                         }
+body {
+  animation: slowPulse 8s infinite alternate;
+}
+
+@keyframes slowPulse {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
