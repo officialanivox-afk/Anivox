@@ -9,65 +9,60 @@ body {
   height: 100vh;
   background: #05080f;
   overflow: hidden;
+  touch-action: none;
 }
 
 .world {
-  height: 100vh;
-  width: 100%;
   position: relative;
+  width: 100%;
+  height: 100vh;
 }
 
 .gradient {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 30%, #0fffc1, transparent 60%),
-              radial-gradient(circle at 70% 70%, #4c6fff, transparent 60%);
-  animation: breathe 10s ease-in-out infinite;
+  background:
+    radial-gradient(circle at 30% 30%, #00ffd5, transparent 60%),
+    radial-gradient(circle at 70% 70%, #5b7cff, transparent 60%);
+  animation: breathe 12s ease-in-out infinite;
   opacity: 0.35;
 }
 
 @keyframes breathe {
   0% { transform: scale(1); }
-  50% { transform: scale(1.15); }
+  50% { transform: scale(1.2); }
   100% { transform: scale(1); }
 }
 
 .center {
-  position: relative;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   z-index: 2;
 }
 
-.safe-text {
-  color: #dce6ff;
+.main-text {
+  color: #e6edff;
   font-size: 1.2rem;
-  letter-spacing: 0.5px;
-  margin-bottom: 25px;
-  opacity: 0;
-  animation: fadeIn 3s ease forwards;
+  opacity: 0.8;
 }
 
-@keyframes fadeIn {
-  to { opacity: 1; }
+.floating {
+  position: absolute;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  animation: float 6s ease-in-out infinite;
 }
 
-.enter-btn {
-  background: transparent;
-  color: #ffffff;
-  border: 1px solid rgba(255,255,255,0.4);
-  padding: 14px 28px;
-  border-radius: 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-  transition: all 0.4s ease;
-}
+.floating-1 { top: 20%; left: 15%; }
+.floating-2 { top: 60%; right: 20%; animation-delay: 2s; }
+.floating-3 { bottom: 20%; left: 40%; animation-delay: 4s; }
 
-.enter-btn:hover {
-  transform: scale(1.08);
-  background: rgba(255,255,255,0.08);
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-20px); opacity: 0.9; }
+  100% { transform: translateY(0); opacity: 0.4; }
 }
