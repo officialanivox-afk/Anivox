@@ -43,6 +43,12 @@ const realms = [
   { name:"Realm • Neon",  bg1:"#7bff00", bg2:"#00ffd5", accent:"#7bff00" },
   { name:"Realm • Void",  bg1:"#000000", bg2:"#1a1a1a", accent:"#888888" }
 ];
+const realmSounds = [
+  "https://cdn.pixabay.com/audio/2022/10/03/audio_7e3f1d9f8b.mp3", // Drift
+  "https://cdn.pixabay.com/audio/2022/03/15/audio_9d6b20c97a.mp3", // Echo
+  "https://cdn.pixabay.com/audio/2022/11/09/audio_0e5b8c7a64.mp3", // Neon
+  "https://cdn.pixabay.com/audio/2022/08/04/audio_2fddf9f7c5.mp3"  // Void
+];
 
 let realm = 0;
 let startX = 0;
