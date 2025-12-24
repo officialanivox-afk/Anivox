@@ -81,3 +81,20 @@ button.solid{
   flex:1;background:#5b7cff;color:#fff;
   border:none;border-radius:18px;padding:10px
          }
+.center {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin: 10px;
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 16px;
+                        }
