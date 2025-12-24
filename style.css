@@ -156,3 +156,36 @@ button.ghost {
 button.solid {
   background: #5b7cff;
 }
+/* 🌈 REALM COLOR VARIABLES */
+:root {
+  --bg1: #00ffd5;
+  --bg2: #5b7cff;
+  --accent: #5b7cff;
+}
+
+/* APPLY TO BACKGROUND */
+.bg {
+  background:
+    radial-gradient(circle at 30% 30%, var(--bg1), transparent 55%);
+}
+
+.mid {
+  background:
+    radial-gradient(circle at 70% 70%, var(--bg2), transparent 55%);
+}
+
+/* HUD GLOW */
+.hud {
+  color: var(--accent);
+}
+
+/* VIDEO TINT */
+.video video {
+  filter: drop-shadow(0 0 30px var(--accent));
+  transition: filter 0.6s ease;
+}
+
+/* BUTTON ACCENT */
+button.solid {
+  background: var(--accent);
+}
