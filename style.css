@@ -179,3 +179,8 @@ body::before {
   50% { box-shadow: 0 0 40px rgba(91,124,255,0.25); }
   100% { box-shadow: 0 0 0 rgba(91,124,255,0.0); }
   }
+.flow {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
