@@ -95,3 +95,9 @@ save.onclick = () => {
   distort.value = 0;
   creator.classList.remove("show");
 };
+document.addEventListener("touchstart", () => {
+  if (!soundEnabled) {
+    soundEnabled = true;
+    playRealmSound(realm);
+  }
+}, { once:true });
