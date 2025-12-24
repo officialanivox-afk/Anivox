@@ -82,4 +82,18 @@ save.onclick=()=>{
 };
 
 /* ENABLE AUDIO ON FIRST TOUCH */
-document.addEventListener("touchstart",()=>{if(!soundEnabled){soundEnabled=true;playRealmSound(realm);}}, {once:true});
+const soundBtn = document.getElementById("soundBtn");
+
+soundBtn.onclick = async () => {
+  soundEnabled = true;
+
+  audio.src = realmSounds[realm];
+  audio.volume = 0.3;
+
+  try {
+    await audio.play();
+    soundBtn.innerText = "🔊 ON";
+  } catch (err) {
+    alert("Tap again to enable sound");
+  }
+};
