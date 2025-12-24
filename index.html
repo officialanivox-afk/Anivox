@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anivox</title>
   <link rel="stylesheet" href="style.css">
@@ -15,26 +15,45 @@
 
   <div class="hud">
     <span id="realmName">Realm • Drift</span>
+    <button class="trace-btn" id="traceBtn">Leave a trace</button>
   </div>
 
   <div class="flow" id="flow">
     <section class="scene">
-      <p class="whisper">Let go of scrolling.</p>
+      <p class="whisper">Nothing here is permanent.</p>
     </section>
+
     <section class="scene video">
-      <video src="https://www.w3schools.com/html/mov_bbb.mp4" muted autoplay loop playsinline></video>
-      <p class="caption">A moment passes.</p>
+      <video id="baseVideo"
+        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        muted autoplay loop playsinline></video>
+      <p class="caption">Touch to bend this moment.</p>
     </section>
+
     <section class="scene">
-      <p class="whisper">Depth responds to you.</p>
+      <p class="whisper">What you add, stays.</p>
     </section>
-    <section class="scene video">
-      <video src="https://www.w3schools.com/html/movie.mp4" muted autoplay loop playsinline></video>
-      <p class="caption">Another world overlaps.</p>
-    </section>
+  </div>
+
+  <!-- CREATOR OVERLAY -->
+  <div class="creator" id="creator">
+    <div class="creator-card">
+      <p class="creator-title">Leave a trace</p>
+
+      <label class="lbl">Write a whisper</label>
+      <textarea id="whisperInput" placeholder="Few words are enough…"></textarea>
+
+      <label class="lbl">Distort the moment</label>
+      <input type="range" id="distort" min="0" max="100" value="0"/>
+
+      <div class="creator-actions">
+        <button class="ghost" id="cancel">Disappear</button>
+        <button class="solid" id="save">Leave it</button>
+      </div>
+    </div>
   </div>
 </div>
 
 <script src="script.js"></script>
 </body>
-</html>
+  </html>
