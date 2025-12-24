@@ -9,14 +9,29 @@
 <body>
 
 <div class="world" id="world">
-  <div class="gradient"></div>
+  <div class="layer bg"></div>
+  <div class="layer mid"></div>
+  <div class="layer fg"></div>
 
-  <div class="floating floating-1">Stories</div>
-  <div class="floating floating-2">Moments</div>
-  <div class="floating floating-3">Worlds</div>
+  <div class="hud">
+    <span id="realmName">Realm • Drift</span>
+  </div>
 
-  <div class="center">
-    <p class="main-text" id="mainText">Touch the space.</p>
+  <div class="flow" id="flow">
+    <section class="scene">
+      <p class="whisper">Let go of scrolling.</p>
+    </section>
+    <section class="scene video">
+      <video src="https://www.w3schools.com/html/mov_bbb.mp4" muted autoplay loop playsinline></video>
+      <p class="caption">A moment passes.</p>
+    </section>
+    <section class="scene">
+      <p class="whisper">Depth responds to you.</p>
+    </section>
+    <section class="scene video">
+      <video src="https://www.w3schools.com/html/movie.mp4" muted autoplay loop playsinline></video>
+      <p class="caption">Another world overlaps.</p>
+    </section>
   </div>
 </div>
 
