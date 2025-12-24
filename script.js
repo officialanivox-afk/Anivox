@@ -53,6 +53,7 @@ function applyRealm(i) {
   document.documentElement.style.setProperty("--bg1", r.bg1);
   document.documentElement.style.setProperty("--bg2", r.bg2);
   document.documentElement.style.setProperty("--accent", r.accent);
+  playRealmSound(index);
 }
 
 /* INITIAL */
