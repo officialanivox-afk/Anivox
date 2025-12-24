@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anivox Realm</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h2 class="soft-text">Nothing here is permanent.</h2>
+
+  <!-- YAHI TUMHARA REALM CONTENT AAYEGA -->
+
+  <!-- 👇 JS HAMESHA BODY KE END ME -->
+  <script src="role.js"></script>
+
+  <script>
+    const role = localStorage.getItem("anivox_role");
+
+    if (role === "observer") {
+      document.body.classList.add("observer-mode");
+    }
+
+    if (role === "distorter") {
+      document.body.classList.add("distort-mode");
+    }
+
+    if (role === "creator") {
+      document.body.classList.add("creator-mode");
+    }
+  </script>
+
+</body>
+</html>
