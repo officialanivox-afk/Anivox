@@ -64,3 +64,6 @@ save.onclick=()=>{
   creator.classList.remove('show');
   whisperInput.value=''; distort.value=0;
 };
+document.getElementById("enterBtn").addEventListener("click", () => {
+  window.location.href = "realm.html";
+});
