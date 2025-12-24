@@ -1,6 +1,6 @@
 let audio = new Audio();
 audio.loop = true;
-audio.volume = 0;
+audio.volume = 0.3;
 
 let soundEnabled = false;
 
