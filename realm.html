@@ -8,28 +8,48 @@
 
 <body>
 
-  <h2 class="soft-text">Nothing here is permanent.</h2>
+<div class="world" id="world">
 
-  <!-- YAHI TUMHARA REALM CONTENT AAYEGA -->
+  <div class="layer bg"></div>
+  <div class="layer mid"></div>
+  <div class="layer fg"></div>
 
-  <!-- 👇 JS HAMESHA BODY KE END ME -->
-  <script src="role.js"></script>
+  <div class="hud">
+    <span id="realmName">Realm • Drift</span>
+    <button class="trace-btn" id="traceBtn">Leave a trace</button>
+  </div>
 
-  <script>
-    const role = localStorage.getItem("anivox_role");
+  <div class="flow" id="flow">
 
-    if (role === "observer") {
-      document.body.classList.add("observer-mode");
-    }
+    <section class="scene">
+      <p class="whisper">Nothing here is permanent.</p>
+    </section>
 
-    if (role === "distorter") {
-      document.body.classList.add("distort-mode");
-    }
+    <section class="scene video">
+      <video id="baseVideo"
+        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        muted autoplay loop playsinline></video>
+      <p class="caption">Touch to bend this moment.</p>
+    </section>
 
-    if (role === "creator") {
-      document.body.classList.add("creator-mode");
-    }
-  </script>
+  </div>
 
+  <div class="creator" id="creator">
+    <div class="creator-card">
+      <p class="creator-title">Leave a trace</p>
+
+      <textarea id="whisperInput" placeholder="Few words are enough…"></textarea>
+      <input type="range" id="distort" min="0" max="100" value="0"/>
+
+      <div class="creator-actions">
+        <button class="ghost" id="cancel">Disappear</button>
+        <button class="solid" id="save">Leave it</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
