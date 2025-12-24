@@ -1,62 +1,19 @@
-<body>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anivox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-<div class="world" id="world">
+<body class="center">
 
-  <!-- ROLE SCREEN (GATE) -->
-  <div id="role-screen" class="center">
-    <p class="soft-text">You are not a visitor.</p>
-    <h2>Choose how you exist</h2>
+  <p class="soft-text">You are not a visitor.</p>
+  <h2>Choose how you exist</h2>
 
-    <button onclick="setRole('observer')">Observe</button>
-    <button onclick="setRole('distorter')">Distort</button>
-    <button onclick="setRole('creator')">Create</button>
-  </div>
+  <button onclick="setRole('observer')">Observe</button>
+  <button onclick="setRole('distorter')">Distort</button>
+  <button onclick="setRole('creator')">Create</button>
 
-  <!-- WORLD LAYERS (AFTER ENTRY) -->
-  <div class="layer bg"></div>
-  <div class="layer mid"></div>
-  <div class="layer fg"></div>
-
-  <div class="hud">
-    <span id="realmName">Realm • Drift</span>
-    <button class="trace-btn" id="traceBtn">Leave a trace</button>
-  </div>
-
-  <div class="flow" id="flow">
-    <section class="scene">
-      <p class="whisper">Nothing here is permanent.</p>
-    </section>
-
-    <section class="scene video">
-      <video id="baseVideo"
-        src="https://www.w3schools.com/html/mov_bbb.mp4"
-        muted autoplay loop playsinline></video>
-      <p class="caption">Touch to bend this moment.</p>
-    </section>
-
-    <section class="scene">
-      <p class="whisper">What you add, stays.</p>
-    </section>
-  </div>
-
-  <div class="creator" id="creator">
-    <div class="creator-card">
-      <p class="creator-title">Leave a trace</p>
-
-      <label class="lbl">Write a whisper</label>
-      <textarea id="whisperInput" placeholder="Few words are enough…"></textarea>
-
-      <label class="lbl">Distort the moment</label>
-      <input type="range" id="distort" min="0" max="100" value="0"/>
-
-      <div class="creator-actions">
-        <button class="ghost" id="cancel">Disappear</button>
-        <button class="solid" id="save">Leave it</button>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="role.js"></script>
 </body>
+</html>
