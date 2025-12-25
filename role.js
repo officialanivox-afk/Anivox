@@ -1,16 +1,16 @@
-function setRole() {
-  const audio = document.getElementById("bgSound");
+const audio = document.getElementById("bgSound");
 
-  // FORCE sound after user click
-  audio.muted = false;
-  audio.currentTime = 0;
-
+function enter() {
+  // force unlock audio
+  audio.muted = true;
   audio.play().then(() => {
-    console.log("Sound playing");
+    audio.pause();
+    audio.currentTime = 0;
+    audio.muted = false;
+    audio.play();
   }).catch(err => {
-    console.log("Sound blocked:", err);
+    console.log("Audio error:", err);
   });
 
-  // Hide role screen
   document.getElementById("role-screen").style.display = "none";
 }
