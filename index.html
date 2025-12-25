@@ -2,66 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ANIVOX</title>
+  <title>Anivox World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ROLE SCREEN -->
-<div class="center" id="role-screen">
-  <p class="soft-text">You are not a visitor.</p>
-  <h2>Choose how you exist</h2>
-
-  <button onclick="setRole()">Observe</button>
-  <button onclick="setRole()">Distort</button>
-  <button onclick="setRole()">Create</button>
-</div>
-
-<!-- WORLD -->
-<div class="world" id="world">
-
-  <!-- LAYERS -->
-  <div class="layer bg"></div>
-  <div class="layer mid"></div>
-  <div class="layer fg"></div>
-
-  <!-- HUD -->
-  <div class="hud">
-    <span id="realmName">Realm • Drift</span>
-    <div>
-      <button class="trace-btn" id="soundBtn">🔊 Sound</button>
-      <button class="trace-btn" id="traceBtn">Leave a trace</button>
+  <!-- ENTRY PORTAL -->
+  <div id="portal">
+    <div class="portal-content">
+      <h1>ANIVOX</h1>
+      <p>A safe digital world</p>
+      <button onclick="enterWorld()">ENTER WORLD</button>
     </div>
   </div>
 
-  <!-- FLOW -->
-  <div class="flow" id="flow">
-    <section class="scene"><p class="whisper">Nothing here is permanent.</p></section>
-    <section class="scene video">
-      <video id="baseVideo" src="https://www.w3schools.com/html/mov_bbb.mp4" muted autoplay loop playsinline></video>
-      <p class="caption">Touch to bend this moment.</p>
-    </section>
-    <section class="scene"><p class="whisper">What you add, stays.</p></section>
+  <!-- WORLD (hidden first) -->
+  <div id="world" class="hidden">
+    <h2>Welcome to Anivox</h2>
+    <p>You are inside the world now.</p>
   </div>
 
-  <!-- CREATOR -->
-  <div class="creator" id="creator">
-    <div class="creator-card">
-      <p class="creator-title">Leave a trace</p>
-      <label class="lbl">Write a whisper</label>
-      <textarea id="whisperInput" placeholder="Few words are enough…"></textarea>
-      <label class="lbl">Distort the moment</label>
-      <input type="range" id="distort" min="0" max="100" value="0"/>
-      <div class="creator-actions">
-        <button class="ghost" id="cancel">Disappear</button>
-        <button class="solid" id="save">Leave it</button>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<script src="script.js"></script>
-<script src="role.js"></script>
+  <script src="script.js"></script>
 </body>
-  </html>
+</html>
