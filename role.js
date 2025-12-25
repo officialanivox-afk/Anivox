@@ -1,26 +1,15 @@
-const audio = document.getElementById("bgSound");
-
-function enter() {
-  // force unlock audio
-  audio.muted = true;
-  audio.play().then(() => {
-    audio.pause();
-    audio.currentTime = 0;
-    audio.muted = false;
-    audio.play();
-  }).catch(err => {
-    console.log("Audio error:", err);
-  });
-
-  document.getElementById("role-screen").style.display = "none";
-}
 function setRole() {
-  // hide role screen
-  document.getElementById("role-screen").style.display = "none";
+  const roleScreen = document.getElementById("role-screen");
+  const world = document.getElementById("world");
 
-  // optional: start sound if available
+  // hide role screen
+  roleScreen.style.display = "none";
+
+  // show world
+  world.style.display = "block";
+  world.style.opacity = "1";
+
+  // trigger sound
   const soundBtn = document.getElementById("soundBtn");
-  if (soundBtn) {
-    soundBtn.click(); // auto trigger sound enable
-  }
+  if (soundBtn) soundBtn.click();
 }
