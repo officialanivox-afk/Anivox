@@ -9,7 +9,7 @@ const realms = [
 let realm = 0;
 let startX = 0;
 
-/* ===== AUDIO (SINGLE SOURCE) ===== */
+/* ===== AUDIO ===== */
 let audio = null;
 let soundEnabled = false;
 
@@ -22,14 +22,8 @@ soundBtn.onclick = async () => {
     audio.loop = true;
     audio.volume = 0.3;
   }
-
-  try {
-    await audio.play();
-    soundEnabled = true;
-    soundBtn.innerText = "🔊 ON";
-  } catch (err) {
-    alert("Tap again to enable sound");
-  }
+  try { await audio.play(); soundEnabled=true; soundBtn.innerText="🔊 ON"; }
+  catch { alert("Tap again to enable sound"); }
 };
 
 /* ===== DOM ===== */
@@ -42,7 +36,7 @@ const save = document.getElementById("save");
 const cancel = document.getElementById("cancel");
 const baseVideo = document.getElementById("baseVideo");
 
-/* ===== APPLY REALM ===== */
+/* APPLY REALM */
 function applyRealm(i) {
   const r = realms[i];
   realmName.textContent = r.name;
@@ -54,38 +48,29 @@ function applyRealm(i) {
 /* INITIAL */
 applyRealm(0);
 
-/* ===== SWIPE REALMS ===== */
-document.addEventListener("touchstart", e => {
-  startX = e.touches[0].clientX;
-}, { passive: true });
-
+/* SWIPE REALMS */
+document.addEventListener("touchstart", e => startX = e.touches[0].clientX, {passive:true});
 document.addEventListener("touchend", e => {
   const diff = e.changedTouches[0].clientX - startX;
-  if (Math.abs(diff) > 60) {
-    realm = (realm + (diff > 0 ? 1 : -1) + realms.length) % realms.length;
+  if(Math.abs(diff)>60){
+    realm = (realm + (diff>0?1:-1) + realms.length)%realms.length;
     applyRealm(realm);
   }
-}, { passive: true });
+},{passive:true});
 
-/* ===== CREATOR ===== */
+/* CREATOR */
 traceBtn.onclick = () => creator.classList.add("show");
 cancel.onclick = () => creator.classList.remove("show");
-
 distort.oninput = () => {
   baseVideo.style.filter =
-    `hue-rotate(${distort.value}deg) saturate(${100 + distort.value}%) blur(${distort.value / 40}px)`;
+    `hue-rotate(${distort.value}deg) saturate(${100+distort.value}%) blur(${distort.value/40}px)`;
 };
-
 save.onclick = () => {
   const text = whisperInput.value.trim();
-  if (!text) return;
-
+  if(!text) return;
   const s = document.createElement("section");
-  s.className = "scene";
-  s.innerHTML = `<p class="whisper">${text}</p>`;
-  document.getElementById("flow").appendChild(s);
-
-  whisperInput.value = "";
-  distort.value = 0;
-  creator.classList.remove("show");
+  s.className='scene';
+  s.innerHTML=`<p class="whisper">${text}</p>`;
+  document.getElementById('flow').appendChild(s);
+  whisperInput.value=''; distort.value=0; creator.classList.remove('show');
 };
