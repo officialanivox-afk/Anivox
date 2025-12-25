@@ -4,12 +4,11 @@
   --accent: #5b7cff;
 }
 
-/* GLOBAL STYLES */
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui}
-body{height:100vh;background:#04070e;overflow:hidden;touch-action:none;color:#e9eeff;}
+body{height:100vh;background:#04070e;overflow:hidden;color:#e9eeff;}
 
 /* WORLD */
-.world{position:relative;width:100%;height:100vh;perspective:1200px;overflow:hidden;transition: transform 0.25s ease-out;}
+.world{display:block;position:relative;width:100%;height:100vh;perspective:1200px;overflow:hidden;transition: transform 0.25s ease-out;}
 
 /* LAYERS */
 .layer{position:absolute;inset:-10%;transform-origin:center}
@@ -35,7 +34,7 @@ body{height:100vh;background:#04070e;overflow:hidden;touch-action:none;color:#e9
 .trace-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#fff;padding:8px 14px;border-radius:20px;backdrop-filter:blur(10px)}
 
 /* FLOW */
-.flow{position:absolute;inset:0;display:flex;flex-direction:column;will-change:transform;height:100vh;overflow-y:scroll;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;transition: transform 0.18s cubic-bezier(0.22,1,0.36,1);}
+.flow{position:absolute;inset:0;display:flex;flex-direction:column;height:100vh;overflow-y:scroll;scroll-behavior:smooth;}
 .scene{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:24px;animation:drift 9s ease-in-out infinite alternate;}
 @keyframes drift{0%{transform:translateY(0px);}100%{transform:translateY(-14px);}}
 
@@ -56,7 +55,7 @@ button.ghost{flex:1;background:transparent;color:#fff;border:1px solid rgba(255,
 button.solid{flex:1;background:#5b7cff;color:#fff;border:none;border-radius:18px;padding:10px}
 
 /* CENTER SCREEN */
-.center{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.center{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#04070e;z-index:50;position:fixed;width:100%}
 button{margin:10px;padding:14px 28px;border-radius:30px;border:none;background:rgba(255,255,255,0.08);color:#fff;font-size:16px}
 
 /* CINEMATIC EFFECTS */
