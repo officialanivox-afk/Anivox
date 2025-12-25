@@ -11,26 +11,25 @@
   <p class="soft-text">You are not a visitor.</p>
   <h2>Choose how you exist</h2>
 
-  <button onclick="setRole('observer')">Observe</button>
-  <button onclick="setRole('distorter')">Distort</button>
-  <button onclick="setRole('creator')">Create</button>
+  <button onclick="startExperience('observer')">Observe</button>
+  <button onclick="startExperience('distorter')">Distort</button>
+  <button onclick="startExperience('creator')">Create</button>
 </div>
-
-<script src="role.js"></script>
-  <button id="enableSound">Enable Sound</button>
 
 <audio id="bgSound" loop>
   <source src="sound.mp3" type="audio/mpeg">
 </audio>
 
+<script src="role.js"></script>
+
 <script>
-  const btn = document.getElementById("enableSound");
   const audio = document.getElementById("bgSound");
 
-  btn.addEventListener("click", () => {
-    audio.play();
-    btn.style.display = "none";
-  });
-      </script>
+  function startExperience(role) {
+    audio.play();          // ✅ sound starts on user tap
+    setRole(role);         // existing function
+  }
+</script>
+
 </body>
 </html>
