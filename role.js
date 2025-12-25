@@ -14,3 +14,13 @@ function enter() {
 
   document.getElementById("role-screen").style.display = "none";
 }
+function setRole() {
+  // hide role screen
+  document.getElementById("role-screen").style.display = "none";
+
+  // optional: start sound if available
+  const soundBtn = document.getElementById("soundBtn");
+  if (soundBtn) {
+    soundBtn.click(); // auto trigger sound enable
+  }
+}
