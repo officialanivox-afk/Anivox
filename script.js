@@ -1,7 +1,6 @@
 function enterWorld() {
-  document.getElementById("portal").style.display = "none";
-  document.getElementById("world").classList.remove("hidden");
-
-  // future ke liye base
-  localStorage.setItem("enteredAnivox", "true");
+  document.body.style.opacity = "0";
+  setTimeout(() => {
+    window.location.href = "world.html";
+  }, 800);
 }
