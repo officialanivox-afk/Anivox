@@ -3,19 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <title>ANIVOX World</title>
-  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at top, #032b2b, #000);
+      color: #00ffe0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .world {
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      letter-spacing: 3px;
+    }
+
+    .zones {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .zone {
+      padding: 25px;
+      border-radius: 18px;
+      background: rgba(0,255,224,0.08);
+      border: 1px solid rgba(0,255,224,0.4);
+      box-shadow: 0 0 20px rgba(0,255,224,0.2);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .zone:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 35px #00ffe0;
+    }
+  </style>
 </head>
+<body>
 
-<body class="world-body">
+  <div class="world">
+    <h1>Welcome to ANIVOX</h1>
 
-  <h1 class="world-title">Welcome to ANIVOX</h1>
-
-  <div class="zone-grid">
-    <div class="zone">🎌 Anime Zone</div>
-    <div class="zone">🎬 Movies Zone</div>
-    <div class="zone">📺 Series Zone</div>
-    <div class="zone">🔥 Reels Zone</div>
+    <div class="zones">
+      <div class="zone">🎌 Anime Zone</div>
+      <div class="zone">🎬 Movies Zone</div>
+      <div class="zone">📺 Series Zone</div>
+      <div class="zone">🔥 Reels Zone</div>
+    </div>
   </div>
 
 </body>
