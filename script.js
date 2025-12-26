@@ -1,12 +1,12 @@
-const btn = document.getElementById("enterWorld");
-const portal = document.getElementById("portal");
+const enterBtn = document.getElementById("enterBtn");
+const portal = document.getElementById("portal-screen");
+const world = document.getElementById("world");
 
-btn.addEventListener("click", () => {
-  portal.classList.add("active");
-  document.body.style.transition = "transform 0.8s ease";
-  document.body.style.transform = "scale(1.15)";
-
+enterBtn.addEventListener("click", () => {
+  portal.style.opacity = "0";
+  portal.style.transform = "scale(1.2)";
   setTimeout(() => {
-    window.location.href = "world.html";
-  }, 1000);
+    portal.style.display = "none";
+    world.classList.remove("hidden");
+  }, 900);
 });
