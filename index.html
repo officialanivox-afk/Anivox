@@ -1,42 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ANIVOX — Enter the World</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANIVOX</title>
+
+  <!-- CSS LINK -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- PORTAL SCREEN -->
-<div id="portal-screen">
-  <div class="portal">
-    <div class="core"></div>
-    <div class="ring"></div>
-    <div class="ring ring2"></div>
+  <div class="center">
+    <div class="portal"></div>
+    <button class="enter-btn" onclick="enterWorld()">ENTER ANIVOX</button>
   </div>
-  <button id="enterBtn">ENTER ANIVOX</button>
-</div>
 
-<!-- WORLD -->
-<div id="world" class="hidden">
-  <header>
-    <h1>ANIVOX</h1>
-    <p>Watch • Reel • Create • Connect</p>
-  </header>
-
-  <section class="zones">
-    <div class="zone">ANIME</div>
-    <div class="zone">MOVIES</div>
-    <div class="zone">SERIES</div>
-    <div class="zone">REELS</div>
-  </section>
-
-  <footer>
-    <p>© 2025 ANIVOX World</p>
-  </footer>
-</div>
-
-<script src="script.js"></script>
+  <!-- JS LINK -->
+  <script src="script.js"></script>
 </body>
 </html>
