@@ -2,162 +2,105 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background: radial-gradient(circle at center, #050010, #000);
-  color: #fff;
-  overflow-x: hidden;
-}
-
-/* PORTAL */
-#portal-screen {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background: radial-gradient(circle at top, #0b0016, #000);
+  overflow: hidden;
+  color: #fff;
+  position: relative;
 }
 
-.portal {
+/* 🌌 Moving Energy Background */
+body::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(140,90,255,0.08), transparent 60%);
+  animation: universeMove 20s linear infinite;
+}
+
+@keyframes universeMove {
+  0% { transform: translate(-10%, -10%); }
+  50% { transform: translate(-5%, -15%); }
+  100% { transform: translate(-10%, -10%); }
+}
+
+/* 🌌 Center Layout */
+.center {
   position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+/* 🌀 Portal Core */
+.portal {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #a47cff, #5b2cff);
+  animation: breathe 4s ease-in-out infinite;
+  box-shadow: 0 0 60px rgba(150,100,255,0.7);
+  position: relative;
+}
+
+/* Portal Rings */
+.portal::before,
+.portal::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(170,120,255,0.4);
+  animation: ringPulse 4s infinite;
+}
+
+.portal::before {
   width: 180px;
   height: 180px;
 }
 
-.core {
-  width: 60px;
-  height: 60px;
-  background: #7f5cff;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 40px #7f5cff;
-  animation: pulse 2s infinite;
+.portal::after {
+  width: 220px;
+  height: 220px;
+  animation-delay: 2s;
 }
 
-.ring {
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  border: 2px solid #7f5cff;
-  border-radius: 50%;
-  top: 10px;
-  left: 10px;
-  animation: spin 6s linear infinite;
-  opacity: 0.7;
+/* Animations */
+@keyframes breathe {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }
 
-.ring2 {
-  width: 200px;
-  height: 200px;
-  top: -10px;
-  left: -10px;
-  animation-duration: 10s;
-  opacity: 0.4;
+@keyframes ringPulse {
+  0% { opacity: 0.6; transform: scale(0.9); }
+  50% { opacity: 0.2; transform: scale(1.05); }
+  100% { opacity: 0.6; transform: scale(0.9); }
 }
 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes pulse {
-  0%,100% { transform: translate(-50%,-50%) scale(1); }
-  50% { transform: translate(-50%,-50%) scale(1.3); }
-}
-
-#enterBtn {
+/* 🚪 Enter Button */
+.enter-btn {
   margin-top: 40px;
   padding: 14px 40px;
-  background: transparent;
-  color: #7f5cff;
-  border: 2px solid #7f5cff;
   border-radius: 30px;
+  border: 2px solid #8f6bff;
+  background: transparent;
+  color: #cbb6ff;
   font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#enterBtn:hover {
-  background: #7f5cff;
-  color: #000;
-  box-shadow: 0 0 20px #7f5cff;
-}
-
-/* WORLD */
-.hidden {
-  display: none;
-}
-
-#world {
-  min-height: 100vh;
-  padding: 30px;
-  animation: fadeIn 1.2s ease forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-header h1 {
-  font-size: 42px;
-  letter-spacing: 3px;
-}
-
-.zones {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
-  gap: 20px;
-}
-
-.zone {
-  height: 120px;
-  background: rgba(127,92,255,0.08);
-  border: 1px solid rgba(127,92,255,0.3);
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
   letter-spacing: 2px;
   cursor: pointer;
   transition: 0.4s;
-  position: relative;
-  overflow: hidden;
 }
 
-.zone::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(127,92,255,0.4), transparent);
-  opacity: 0;
-  transition: 0.4s;
-}
-
-.zone:hover::after {
-  opacity: 1;
-}
-
-.zone:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 0 25px rgba(127,92,255,0.6);
-}
-
-footer {
-  text-align: center;
-  margin-top: 60px;
-  opacity: 0.6;
-  font-size: 14px;
-  }
+.enter-btn:hover {
+  background: #8f6bff;
+  color: #000;
+  box-shadow: 0 0 25px #8f6bff;
+  transform: scale(1.05);
+           }
