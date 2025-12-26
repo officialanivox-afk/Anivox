@@ -2,26 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Anivox World</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANIVOX Portal</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="portal">
 
-  <!-- ENTRY PORTAL -->
-  <div id="portal">
-    <div class="portal-content">
-      <h1>ANIVOX</h1>
-      <p>A safe digital world</p>
-      <button onclick="enterWorld()">ENTER WORLD</button>
-    </div>
+  <div class="portal-center">
+    <h1 class="logo">ANIVOX</h1>
+    <p class="tagline">A safe digital world</p>
+
+    <button class="enter-btn" onclick="enterWorld()">
+      ENTER WORLD
+    </button>
   </div>
 
-  <!-- WORLD (hidden first) -->
-  <div id="world" class="hidden">
-    <h2>Welcome to Anivox</h2>
-    <p>You are inside the world now.</p>
-  </div>
+  <div class="portal-glow"></div>
 
   <script src="script.js"></script>
 </body>
