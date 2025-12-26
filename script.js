@@ -1,14 +1,11 @@
-const portal = document.querySelector('.portal-wrapper');
-const button = document.querySelector('.enter-btn');
+const enterBtn = document.getElementById("enterBtn");
+const portal = document.getElementById("portal");
+const world = document.getElementById("world");
 
-function enterWorld() {
-  portal.style.transform = 'scale(1.3)';
-  portal.style.boxShadow = '0 0 150px #00ffe0';
-
+enterBtn.addEventListener("click", () => {
+  portal.style.opacity = "0";
   setTimeout(() => {
-    window.location.href = "world.html";
-  }, 700);
-}
-
-portal.addEventListener('click', enterWorld);
-button.addEventListener('click', enterWorld);
+    portal.classList.add("hidden");
+    world.classList.remove("hidden");
+  }, 800);
+});
