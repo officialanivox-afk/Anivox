@@ -2,115 +2,97 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* ===== PORTAL ===== */
-body.portal {
-  background: #000;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.portal-core {
-  width: 140px;
-  height: 140px;
-  background: #8b5cf6;
-  border-radius: 50%;
-  box-shadow: 0 0 60px #8b5cf6;
-  animation: pulse 3s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-  100% { transform: scale(1); }
-}
-
-.enter-btn {
-  margin-top: 40px;
-  padding: 14px 40px;
-  background: transparent;
-  color: #8b5cf6;
-  border: 2px solid #8b5cf6;
-  border-radius: 30px;
-  font-size: 16px;
-}
-
-/* ===== WORLD ===== */
-body.world {
-  background: radial-gradient(circle, #0b0b1a, #000);
-  color: white;
+body {
+  background: radial-gradient(circle at top, #1a002b, #000);
+  color: #fff;
   min-height: 100vh;
+}
+
+/* ================= ANIME PAGE ================= */
+
+.anime-body {
+  padding-bottom: 40px;
+}
+
+.anime-header {
   text-align: center;
+  padding: 30px 15px;
 }
 
-.logo {
-  margin-top: 40px;
-  font-size: 40px;
-  letter-spacing: 6px;
+.anime-header h1 {
+  font-size: 32px;
+  letter-spacing: 3px;
 }
 
-.tagline {
-  opacity: 0.7;
-  margin-bottom: 40px;
+.anime-header p {
+  opacity: 0.6;
+  margin-top: 5px;
 }
 
-.grid {
+.anime-search {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.anime-search input {
+  width: 85%;
+  max-width: 400px;
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background: #12001f;
+  color: white;
+  font-size: 14px;
+  box-shadow: 0 0 20px rgba(160, 100, 255, 0.25);
+}
+
+/* GRID */
+.anime-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
   padding: 20px;
 }
 
-.box {
+/* CARD */
+.anime-card {
   background: rgba(255,255,255,0.05);
-  border: 1px solid #8b5cf6;
-  border-radius: 20px;
-  padding: 40px 0;
-  font-size: 18px;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.4s ease;
+  box-shadow: 0 0 25px rgba(140, 70, 255, 0.15);
 }
 
-/* ===== ANIME ZONE ===== */
-body.anime-zone {
-  background: radial-gradient(circle at top, #1a0033, #000);
-  color: white;
-  min-height: 100vh;
+.anime-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.anime-card h3 {
+  padding: 10px;
+  font-size: 14px;
   text-align: center;
 }
 
-.zone-title {
-  margin-top: 40px;
-  color: #c77dff;
-  letter-spacing: 4px;
+.anime-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(170, 90, 255, 0.5);
 }
 
-.zone-sub {
-  opacity: 0.7;
-  margin-bottom: 30px;
+/* BACK */
+.back-home {
+  text-align: center;
+  margin-top: 30px;
 }
 
-.anime-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  padding: 20px;
-}
-
-.anime-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid #c77dff;
-  border-radius: 18px;
-  padding: 30px 10px;
-}
-
-.back-btn {
-  margin: 30px auto;
-  padding: 12px 30px;
-  background: transparent;
-  color: #c77dff;
-  border: 1px solid #c77dff;
-  border-radius: 30px;
+.back-home a {
+  text-decoration: none;
+  color: #b98cff;
+  font-size: 14px;
   }
