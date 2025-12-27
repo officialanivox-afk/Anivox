@@ -2,21 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reels | ANIVOX</title>
+  <title>ANIVOX Reels</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Reels CSS only -->
+  <link rel="stylesheet" href="reels.css">
 </head>
 <body>
 
-<h2 class="page-title">Reels</h2>
+  <button class="back-btn" onclick="window.location.href='home.html'">
+    ← Back
+  </button>
 
-<div class="reels">
-  <div class="reel">Reel 1</div>
-  <div class="reel">Reel 2</div>
-  <div class="reel">Reel 3</div>
-</div>
+  <div class="reels-container">
 
-<a href="home.html" class="back">⬅ Back</a>
+    <div class="reel">
+      <video src="reel1.mp4" muted loop playsinline></video>
+    </div>
 
+    <div class="reel">
+      <video src="reel2.mp4" muted loop playsinline></video>
+    </div>
+
+    <div class="reel">
+      <video src="reel3.mp4" muted loop playsinline></video>
+    </div>
+
+  </div>
+
+  <script src="reels.js"></script>
 </body>
 </html>
