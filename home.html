@@ -3,69 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>ANIVOX World</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(180deg, #050010, #000);
-      color: white;
-      font-family: Poppins, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    h1 {
-      letter-spacing: 6px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      opacity: 0.7;
-      margin-bottom: 40px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 150px);
-      gap: 20px;
-    }
-
-    .card {
-      height: 120px;
-      border-radius: 18px;
-      background: rgba(140,100,255,0.1);
-      border: 1px solid rgba(140,100,255,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      letter-spacing: 2px;
-      cursor: pointer;
-      transition: 0.4s;
-    }
-
-    .card:hover {
-      background: rgba(140,100,255,0.4);
-      box-shadow: 0 0 25px rgba(140,100,255,0.6);
-      transform: translateY(-6px);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+<body class="world">
 
-<body>
-
-  <h1>ANIVOX</h1>
-  <p>Watch • Reel • Create • Connect</p>
+  <h1 class="logo">ANIVOX</h1>
+  <p class="tagline">Watch • Reel • Create • Connect</p>
 
   <div class="grid">
-    <div class="card">ANIME</div>
-    <div class="card">MOVIES</div>
-    <div class="card">SERIES</div>
-    <div class="card">REELS</div>
+    <div class="box" onclick="goAnime()">ANIME</div>
+    <div class="box">MOVIES</div>
+    <div class="box">SERIES</div>
+    <div class="box">REELS</div>
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
