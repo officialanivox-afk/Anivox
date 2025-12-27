@@ -1,8 +1,11 @@
 function enterWorld() {
-  document.body.style.transition = "1s";
-  document.body.style.background = "#000";
+  window.location.href = "home.html";
+}
 
-  setTimeout(() => {
-    window.location.href = "home.html";
-  }, 800);
+function goAnime() {
+  window.location.href = "zones/anime.html";
+}
+
+function goHome() {
+  window.location.href = "../home.html";
 }
