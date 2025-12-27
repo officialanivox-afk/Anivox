@@ -1,58 +1,38 @@
 const videos = document.querySelectorAll("video");
-const container = document.querySelector(".reels-container");
 
-let currentIndex = 0;
-
-// Play first video on load
-videos[currentIndex].play().catch(()=>{});
-
-// IntersectionObserver for auto pause/play
+/* Auto play / pause */
 const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
       const video = entry.target;
-      if(entry.isIntersecting){video.play().catch(()=>{});}
-      else{video.pause(); video.currentTime=0;}
+      if (entry.isIntersecting) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
     });
   },
-  {threshold:0.7}
+  { threshold: 0.6 }
 );
+
 videos.forEach(video => observer.observe(video));
 
-// Infinite swipe support
-let startY=0, endY=0;
-container.addEventListener("touchstart", e => startY=e.touches[0].clientY);
-container.addEventListener("touchend", e => {
-  endY = e.changedTouches[0].clientY;
-  const delta = endY - startY;
-  
-  if(delta>50){ // swipe down
-    fadeToPrev();
-  } else if(delta<-50){ // swipe up
-    fadeToNext();
-  }
+/* Mobile swipe smoothness */
+let startY = 0;
+const container = document.querySelector(".reels-container");
+
+container.addEventListener("touchstart", e => {
+  startY = e.touches[0].clientY;
 });
 
-function fadeToNext(){
-  videos[currentIndex].classList.add('fade-out');
-  videos[currentIndex].pause();
-  videos[currentIndex].currentTime=0;
-  
-  currentIndex = (currentIndex + 1) % videos.length;
-  videos[currentIndex].classList.remove('fade-out');
-  videos[currentIndex].classList.add('fade-in');
-  videos[currentIndex].play().catch(()=>{});
-  setTimeout(()=>videos[currentIndex].classList.remove('fade-in'), 500);
-}
+container.addEventListener("touchend", e => {
+  const endY = e.changedTouches[0].clientY;
+  const diff = startY - endY;
 
-function fadeToPrev(){
-  videos[currentIndex].classList.add('fade-out');
-  videos[currentIndex].pause();
-  videos[currentIndex].currentTime=0;
-  
-  currentIndex = (currentIndex - 1 + videos.length) % videos.length;
-  videos[currentIndex].classList.remove('fade-out');
-  videos[currentIndex].classList.add('fade-in');
-  videos[currentIndex].play().catch(()=>{});
-  setTimeout(()=>videos[currentIndex].classList.remove('fade-in'), 500);
-    }
+  if (diff > 50) {
+    container.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+  }
+  if (diff < -50) {
+    container.scrollBy({ top: -window.innerHeight, behavior: "smooth" });
+  }
+});
