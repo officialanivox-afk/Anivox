@@ -1,1 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
+body {
+  height: 100vh;
+  background: radial-gradient(circle at top, #0b0016, #000);
+  overflow: hidden;
+  color: #fff;
+  position: relative;
+}
+
+/* 🌌 Moving Energy Background */
+body::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(140,90,255,0.08), transparent 60%);
+  animation: universeMove 20s linear infinite;
+}
+
+@keyframes universeMove {
+  0% { transform: translate(-10%, -10%); }
+  50% { transform: translate(-5%, -15%); }
+  100% { transform: translate(-10%, -10%); }
+}
+
+/* 🌌 Center Layout */
+.center {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+/* 🌀 Portal Core */
+.portal {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #a47cff, #5b2cff);
+  animation: breathe 4s ease-in-out infinite;
+  box-shadow: 0 0 60px rgba(150,100,255,0.7);
+  position: relative;
+}
+
+/* Portal Rings */
+.portal::before,
+.portal::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(170,120,255,0.4);
+  animation: ringPulse 4s infinite;
+}
+
+.portal::before {
+  width: 180px;
+  height: 180px;
+}
+
+.portal::after {
+  width: 220px;
+  height: 220px;
+  animation-delay: 2s;
+}
+
+/* Animations */
+@keyframes breathe {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes ringPulse {
+  0% { opacity: 0.6; transform: scale(0.9); }
+  50% { opacity: 0.2; transform: scale(1.05); }
+  100% { opacity: 0.6; transform: scale(0.9); }
+}
+
+/* 🚪 Enter Button */
+.enter-btn {
+  margin-top: 40px;
+  padding: 14px 40px;
+  border-radius: 30px;
+  border: 2px solid #8f6bff;
+  background: transparent;
+  color: #cbb6ff;
+  font-size: 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.enter-btn:hover {
+  background: #8f6bff;
+  color: #000;
+  box-shadow: 0 0 25px #8f6bff;
+  transform: scale(1.05);
+}
