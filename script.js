@@ -1,3 +1,6 @@
-function enterApp() {
-  window.location.href = "home.html";
+function enterWorld() {
+  document.body.style.opacity = "0";
+  setTimeout(() => {
+    window.location.href = "home.html";
+  }, 500);
 }
