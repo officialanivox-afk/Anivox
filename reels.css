@@ -1,28 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0b001b;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Top bar */
+.top-bar {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+}
+
+.top-bar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  background: rgba(0,0,0,0.6);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+/* Reels container */
+.reels-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Single reel */
+.reel {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+/* Video */
 .reel video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow:0 0 25px rgba(128,0,255,0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
-}
-
-.reel video.fade-in {
-  opacity: 0;
-  animation: fadeIn 0.5s forwards;
-}
-
-.reel video.fade-out {
-  opacity: 1;
-  animation: fadeOut 0.5s forwards;
-}
-
-@keyframes fadeIn {
-  from {opacity:0;}
-  to {opacity:1;}
-}
-
-@keyframes fadeOut {
-  from {opacity:1;}
-  to {opacity:0;}
+  background: black;
+  box-shadow: 0 0 25px rgba(140, 0, 255, 0.6);
 }
