@@ -22,10 +22,10 @@ body {
 .top-bar a {
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
   background: rgba(0,0,0,0.6);
-  padding: 6px 14px;
+  padding: 8px 14px;
   border-radius: 20px;
+  font-size: 16px;
 }
 
 /* Reels container */
@@ -38,6 +38,7 @@ body {
 
 /* Single reel */
 .reel {
+  position: relative;
   height: 100vh;
   scroll-snap-align: start;
 }
@@ -49,4 +50,23 @@ body {
   object-fit: cover;
   background: black;
   box-shadow: 0 0 25px rgba(140, 0, 255, 0.6);
+}
+
+/* Actions */
+.actions {
+  position: absolute;
+  right: 12px;
+  bottom: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.actions button {
+  background: rgba(0,0,0,0.65);
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 50%;
 }
