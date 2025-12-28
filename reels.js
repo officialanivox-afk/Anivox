@@ -17,7 +17,7 @@ const observer = new IntersectionObserver(
 
 videos.forEach(video => observer.observe(video));
 
-/* Mobile swipe smoothness */
+/* Touch swipe smooth scroll */
 let startY = 0;
 const container = document.querySelector(".reels-container");
 
@@ -32,7 +32,35 @@ container.addEventListener("touchend", e => {
   if (diff > 50) {
     container.scrollBy({ top: window.innerHeight, behavior: "smooth" });
   }
+
   if (diff < -50) {
     container.scrollBy({ top: -window.innerHeight, behavior: "smooth" });
   }
+});
+
+/* Like system */
+document.querySelectorAll(".like-btn").forEach((btn, index) => {
+  const countSpan = btn.querySelector("span");
+  let likes = localStorage.getItem("like_" + index) || 0;
+  countSpan.innerText = likes;
+
+  btn.addEventListener("click", () => {
+    likes++;
+    localStorage.setItem("like_" + index, likes);
+    countSpan.innerText = likes;
+  });
+});
+
+/* Share system */
+document.querySelectorAll(".share-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (navigator.share) {
+      navigator.share({
+        title: "ANIVOX Reels",
+        url: window.location.href
+      });
+    } else {
+      alert("Share not supported on this device");
+    }
+  });
 });
