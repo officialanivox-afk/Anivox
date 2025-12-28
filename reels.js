@@ -1,10 +1,11 @@
 const videos = document.querySelectorAll("video");
 
-/* Auto play / pause */
+/* Auto play / pause on scroll */
 const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
       const video = entry.target;
+
       if (entry.isIntersecting) {
         video.play().catch(() => {});
       } else {
@@ -15,9 +16,21 @@ const observer = new IntersectionObserver(
   { threshold: 0.6 }
 );
 
-videos.forEach(video => observer.observe(video));
+videos.forEach(video => {
+  observer.observe(video);
 
-/* Touch swipe smooth scroll */
+  /* 🔥 TAP TO PLAY / PAUSE + UNMUTE */
+  video.addEventListener("click", () => {
+    if (video.paused) {
+      video.muted = false;   // unmute on tap
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+});
+
+/* Mobile swipe smooth scroll */
 let startY = 0;
 const container = document.querySelector(".reels-container");
 
@@ -44,23 +57,23 @@ document.querySelectorAll(".like-btn").forEach((btn, index) => {
   let likes = localStorage.getItem("like_" + index) || 0;
   countSpan.innerText = likes;
 
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", e => {
+    e.stopPropagation(); // ❗ video tap block na ho
     likes++;
     localStorage.setItem("like_" + index, likes);
     countSpan.innerText = likes;
   });
 });
 
-/* Share system */
+/* Share */
 document.querySelectorAll(".share-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", e => {
+    e.stopPropagation();
     if (navigator.share) {
       navigator.share({
         title: "ANIVOX Reels",
         url: window.location.href
       });
-    } else {
-      alert("Share not supported on this device");
     }
   });
 });
