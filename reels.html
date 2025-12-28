@@ -1,51 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ANIVOX Reels</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="reels.css">
 </head>
 <body>
 
-  <!-- Back Button -->
-  <div class="top-bar">
-    <a href="home.html">← Back</a>
-  </div>
+<div class="reels-container">
 
-  <!-- Reels Container -->
-  <div class="reels-container">
+  <video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay muted loop></video>
+  <video src="https://www.w3schools.com/html/movie.mp4" autoplay muted loop></video>
 
-    <div class="reel">
-      <video src="reel1.mp4" muted loop playsinline></video>
+</div>
 
-      <div class="actions">
-        <button class="like-btn">❤️ <span>0</span></button>
-        <button class="share-btn">🔗</button>
-      </div>
-    </div>
-
-    <div class="reel">
-      <video src="reel2.mp4" muted loop playsinline></video>
-
-      <div class="actions">
-        <button class="like-btn">❤️ <span>0</span></button>
-        <button class="share-btn">🔗</button>
-      </div>
-    </div>
-
-    <div class="reel">
-      <video src="reel3.mp4" muted loop playsinline></video>
-
-      <div class="actions">
-        <button class="like-btn">❤️ <span>0</span></button>
-        <button class="share-btn">🔗</button>
-      </div>
-    </div>
-
-  </div>
-
-  <script src="reels.js"></script>
+<script src="reels.js"></script>
 </body>
 </html>
