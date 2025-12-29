@@ -1,27 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ANIVOX World</title>
+  <title>ANIVOX — Watch • Reel • Connect</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="home-body fade-in">
+<body>
 
-  <h1 class="logo glow-text">ANIVOX</h1>
-  <p class="tagline">Watch · Reel · Create · Connect</p>
+  <!-- HEADER -->
+  <header>
+    <h1>ANIVOX</h1>
+    <nav>
+      <a href="anime.html">Anime</a>
+      <a href="movies.html">Movies</a>
+      <a href="series.html">Series</a>
+      <a href="reels.html">Reels</a>
+    </nav>
+  </header>
 
-  <div class="grid">
-    <div class="card float">ANIME</div>
-    <div class="card float">MOVIES</div>
-    <div class="card float">SERIES</div>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h2>Watch • Reel • Connect</h2>
+    <p>Anime, Movies & Series — All in One Place</p>
+    <a href="#explore" class="btn">Explore Now</a>
+  </section>
 
-    <a href="reels.html" class="card-link">
-      <div class="card float">REELS</div>
-    </a>
-  </div>
+  <!-- POPULAR ANIME -->
+  <section class="section" id="explore">
+    <h3>🔥 Popular Anime</h3>
+    <div class="cards">
+      <a href="anime-view.html" class="card">
+        <img src="https://via.placeholder.com/300x180" alt="Naruto" />
+        <p>Naruto</p>
+      </a>
+      <a href="anime-view.html" class="card">
+        <img src="https://via.placeholder.com/300x180" alt="One Piece" />
+        <p>One Piece</p>
+      </a>
+      <a href="anime-view.html" class="card">
+        <img src="https://via.placeholder.com/300x180" alt="Demon Slayer" />
+        <p>Demon Slayer</p>
+      </a>
+    </div>
+  </section>
 
-  <footer>© 2025 ANIVOX World</footer>
+  <!-- MOVIES SECTION -->
+  <section class="section">
+    <h3>🎬 Movies</h3>
+    <div class="cards">
+      <a href="movies.html" class="card">
+        <img src="https://via.placeholder.com/300x180" alt="Movie 1" />
+        <p>Movie 1</p>
+      </a>
+      <a href="movies.html" class="card">
+        <img src="https://via.placeholder.com/300x180" alt="Movie 2" />
+        <p>Movie 2</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- REELS SECTION -->
+  <section class="section reels">
+    <h3>📱 ANIVOX Reels</h3>
+    <div class="reel-container">
+      <a href="reels.html" class="reel">Reel 1</a>
+      <a href="reels.html" class="reel">Reel 2</a>
+      <a href="reels.html" class="reel">Reel 3</a>
+    </div>
+  </section>
+
+  <!-- LOGIN / SIGNUP -->
+  <section class="section login">
+    <h3>👤 Login / Sign Up</h3>
+    <input type="text" placeholder="Username">
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Create Account</button>
+  </section>
 
 </body>
-</html>
+  </html>
