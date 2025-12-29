@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #2a003d, #050008);
+  color: #fff;
+  padding: 20px;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  text-decoration: none;
+  color: #c084ff;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* HEADER */
+.anime-header {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.anime-header h1 {
+  font-size: 32px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px #9b5cff;
+}
+
+.anime-header p {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* GRID */
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.anime-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(155,92,255,0.2);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.anime-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 40px rgba(155,92,255,0.5);
+}
+
+/* THUMB */
+.thumb {
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(135deg, #7b2cff, #b084ff);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 0 20px rgba(155,92,255,0.6);
+}
+
+/* TEXT */
+.anime-card h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.anime-card span {
+  font-size: 12px;
+  opacity: 0.6;
+                            }
