@@ -1,53 +1,19 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 body {
-  background: radial-gradient(circle at top, #2a0040, #050008);
+  background: radial-gradient(circle, #2b0040, #0b0014);
   color: white;
-  min-height: 100vh;
-  padding: 20px;
-}
-
-.back {
-  color: #b97cff;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.title {
+  font-family: Arial, sans-serif;
   text-align: center;
-  margin: 40px 0;
-  letter-spacing: 3px;
 }
 
-.grid {
+.anime-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  padding: 20px;
 }
 
-.card {
-  text-decoration: none;
-  color: white;
-  background: rgba(255,255,255,0.05);
-  border-radius: 18px;
-  padding: 15px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px #a855ff;
-}
-
-.thumb {
-  height: 120px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #7b2cff, #b084ff);
-  margin-bottom: 10px;
+.anime-card {
+  background: #7f4bff;
+  padding: 40px 10px;
+  border-radius: 15px;
 }
