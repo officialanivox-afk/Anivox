@@ -1,27 +1,14 @@
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at center, #210033 0%, #0a0013 100%);
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  overflow: hidden;
 }
 
-body {
-  background: radial-gradient(circle, #2b0040, #000);
-  color: white;
-  text-align: center;
-}
-
-/* ===== FADE IN ===== */
-.fade-in {
-  animation: fadeIn 1.2s ease forwards;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== PORTAL ===== */
-.portal-body {
+/* Phase 1 Entry Page */
+.center-container {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,92 +16,100 @@ body {
   align-items: center;
 }
 
-.portal {
-  width: 180px;
-  height: 180px;
+.glow-circle {
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  background: #7f5bff;
-  box-shadow: 0 0 60px #7f5bff;
-  animation: portalPulse 2.5s infinite;
+  background: #7c3aed;
+  box-shadow: 0 0 40px 15px rgba(124, 58, 237, 0.6);
+  animation: pulse 3s infinite ease-in-out;
 }
 
-@keyframes portalPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.12); }
-  100% { transform: scale(1); }
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 40px 15px rgba(124, 58, 237, 0.6);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 60px 25px rgba(124, 58, 237, 0.9);
+  }
 }
 
 .enter-btn {
   margin-top: 40px;
-  padding: 14px 40px;
-  border-radius: 30px;
+  padding: 15px 40px;
   border: none;
-  background: #7f5bff;
-  color: black;
-  font-size: 16px;
+  border-radius: 50px;
+  background: #7c3aed;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 1px;
   cursor: pointer;
-  transition: 0.3s;
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.8);
+  transition: 0.3s ease;
 }
+
 .enter-btn:hover {
-  box-shadow: 0 0 20px #7f5bff;
+  background: #9d6bff;
+  box-shadow: 0 0 40px rgba(157, 107, 255, 1);
 }
 
-/* ===== HOME ===== */
-.logo {
-  margin-top: 40px;
-  font-size: 42px;
-  letter-spacing: 4px;
-}
-
-.glow-text {
-  text-shadow: 0 0 15px #7f5bff;
-}
-
-.tagline {
-  opacity: 0.7;
-  margin-bottom: 40px;
+/* Home + Anime pages */
+h1.logo, h1 {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 38px;
+  color: #bdafff;
+  text-shadow: 0 0 25px rgba(157,107,255,0.7);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 140px);
-  gap: 20px;
-  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  width: 80%;
+  max-width: 500px;
+  margin: 60px auto;
 }
 
-/* FLOATING CARDS */
 .card {
-  height: 120px;
-  border-radius: 16px;
-  border: 1px solid #7f5bff55;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s;
-}
-
-.float {
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
+  background: rgba(124, 58, 237, 0.3);
+  border: 1px solid rgba(157,107,255,0.4);
+  border-radius: 15px;
+  text-align: center;
+  padding: 40px 0;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
 }
 
 .card:hover {
-  box-shadow: 0 0 25px #7f5bff;
+  background: rgba(157,107,255,0.6);
   transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(157,107,255,0.8);
 }
 
-.card-link {
-  text-decoration: none;
-  color: inherit;
+/* Anime World */
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
 }
 
-footer {
-  margin-top: 40px;
-  font-size: 12px;
-  opacity: 0.5;
+.anime-card {
+  background: rgba(124, 58, 237, 0.6);
+  padding: 40px 10px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.anime-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(157,107,255,0.9);
   }
